@@ -1,0 +1,38 @@
+<ion-header>
+    <navbar title="Citiesionic"></navbar>
+</ion-header>
+
+<ion-content class="background">
+    <ion-list>
+        <ion-item (click)="gotoForum('Colombo')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/1.jpg" />
+            </ion-avatar>
+            <h2>Colombo</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('Galle')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/2.png" />
+            </ion-avatar>
+            <h2>Galle</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('Mathara')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/3.png" />
+            </ion-avatar>
+            <h2>Mathara</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('Kandy')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/5.png" />
+            </ion-avatar>
+            <h2>Kandy</h2>
+        </ion-item>
+        <ion-item (click)="loadUsers()">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/4.png" />
+            </ion-avatar>
+            <h2>Chat</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

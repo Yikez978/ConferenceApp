@@ -1,0 +1,32 @@
+<ion-header>
+<navbar title="{{name}}" back="true"></navbar>
+</ion-header>
+
+<ion-content padding class="chat-view background" id="chat-view">
+    <div padding class="messages">
+        <div class="message" *ngFor="let chat of chats | async" [ngClass]="{'me': uid === chat.from}">
+            <span *ngIf="chat.message" style="color:white;">{{chat.message}}</span>
+            <img *ngIf="chat.picture" src="{{chat.picture}}" class="picture">
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col col-8 [hidden]="!chats">
+                <ion-input type="text"  placeholder="Enter Message" [(ngModel)]="message"></ion-input>
+            </ion-col>
+            <ion-col col-2 [hidden]="!chats">
+                <a (click)="sendMessage()"><ion-icon name="send"></ion-icon></a>
+            </ion-col>
+            <ion-col col-1 [hidden]="!chats">
+                <a (click)="setPicture(1)"><ion-icon name="camera"></ion-icon></a>
+            </ion-col>
+            <ion-col col-1 [hidden]="!chats">
+                <a (click)="setPicture(2)"><ion-icon name="image"></ion-icon></a>
+            </ion-col>
+        </ion-row>
+
+    </ion-toolbar>
+</ion-footer>

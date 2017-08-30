@@ -1,0 +1,39 @@
+<style>
+
+    ion-content{
+	background: url("../assets/images/loginBG.png") center / cover;
+}
+
+    .login-list{
+    margin-top: 6em;
+}
+
+
+</style>
+<ion-header>
+    <navbar title="Log In"></navbar>
+</ion-header>
+
+<ion-content class="background">
+    <ion-list class="login-list" inset>
+        <form [formGroup]="loginForm" padding>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <br>
+            <div style = "text-align:center; color:#037ef3; ">
+                Recover Password
+                </div>
+            <div padding>
+                <button ion-button block round color="primary" (click)="signin()" [disabled]="!loginForm.valid">log In</button>
+
+                <button ion-button block round (click)="gotoSignUp()">Create Account</button>
+                </div>
+            </form>
+        </ion-list>
+    </ion-content>

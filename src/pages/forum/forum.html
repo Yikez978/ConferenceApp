@@ -1,0 +1,32 @@
+<ion-header>
+<navbar title="EventFeed" back="true"></navbar>
+</ion-header>
+
+<ion-content class="background">
+    <button ion-button primary block round (click)="addNewPost()">New Post</button>
+    <ion-card *ngFor="let post of posts|async">
+
+
+        <img [src]="post.image">
+
+        <ion-card-content>
+            <p>{{post.content}}</p>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button primary block round clear small icon-left>
+                    <ion-icon name='text'></ion-icon>
+                    <span style ="color:black"> Comments </span>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button color="primary" clear small icon-left (click)="gotoComment()">
+                    <ion-icon name='text'></ion-icon>
+                    <span style ="color:black"> Add Comments </span>
+                </button>
+            </ion-col>
+
+        </ion-row>
+    </ion-card>
+</ion-content>

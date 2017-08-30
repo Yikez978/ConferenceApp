@@ -1,0 +1,27 @@
+<ion-navbar hideBackButton color="primary">
+    <ion-buttons left *ngIf="back">
+    <button ion-button icon-only navPop><ion-icon name="arrow-back"></ion-icon></button>
+    </ion-buttons>
+    <button *ngIf="toggle" ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+    <!-- <ion-buttons end>
+        <button ion-button icon-only (click)="showPopup($event,1)">
+            <ion-icon name="notifications" style="position:relative;left:10px;z-index: -1"></ion-icon>
+            <ion-badge color="danger"style="border-radius: 20px;">{{badge}}</ion-badge>
+        </button>
+    </ion-buttons> -->
+    <!-- <ion-buttons end *ngIf="logged">
+        <button ion-button icon-only (click)="showPopup($event,2)">
+            <ion-icon name="chatbubbles" style="position:relative;left:8px;z-index: -1"></ion-icon>
+            <ion-badge color="danger"style="border-radius: 20px;">2</ion-badge>
+        </button>
+    </ion-buttons> -->
+    <ion-buttons end>
+        <!-- <button ion-button icon-only (click)="openSettings($event)">
+            <ion-icon name="more"></ion-icon>
+        </button> -->
+    </ion-buttons>
+    <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+</ion-navbar>

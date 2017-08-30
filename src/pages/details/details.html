@@ -1,0 +1,35 @@
+<ion-header>
+    <navbar title="Train Details" back="true"></navbar>
+        <ion-buttons end>
+            <button ion-button (click)="showOnMap()">View On Map</button>
+        </ion-buttons>
+</ion-header>
+
+<ion-content class="background">
+    <img src="assets/images/stations/{{stationId}}.jpg">
+    <div text-center>
+        <h3>{{trainName}}</h3>
+        <div *ngIf="current_station==''">
+            <span>Running from {{prev_station}} to {{next_station}}</span>
+            <br>
+            <span>Average Speed: {{avg_speed}}</span>
+            <br>
+            <span>Current Speed: {{current_speed}}</span>
+        </div>
+        <div *ngIf="current_station!=''">
+            <span>Stopped at {{current_station}}</span>
+        </div>
+        <br>
+        <h4>Expected Arriving Time:</h4>
+        <span>{{static_ar_time}}</span>
+        <br>
+        <h4>Updated Expected Time:</h4>
+        <span>{{dynamic_ar_time}}</span>
+        <br>
+        <h4>Delay:</h4>
+        <span>{{delay}}</span>
+        <br>
+
+    </div>
+
+</ion-content>

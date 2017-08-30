@@ -1,0 +1,16 @@
+<ion-header>
+<navbar title="Notifications" back="true"></navbar>
+</ion-header>
+
+<ion-content class="background">
+
+    <ion-list>
+        <ion-item *ngFor="let notification of notifications|async">
+            <ion-avatar item-left>
+                <img src="{{notification.sender_picture}}">
+            </ion-avatar>
+            <span>{{notification.message}}</span>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

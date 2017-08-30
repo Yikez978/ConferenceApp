@@ -1,0 +1,43 @@
+<style>
+
+    ion-content{
+	background: url("../assets/images/loginBG.png") center / cover;
+}
+
+</style>
+
+<ion-header>
+    <navbar title="Create Account" back="true"></navbar>
+</ion-header>
+
+<ion-content padding class="background">
+    <ion-list inset>
+        <form [formGroup]="signupForm" padding>
+            <img padding class="circle-pic" style=" margin: auto;display: block;" (click)="selectOption()" src="{{picture}}">
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input type="text" formControlName="first_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input type="text" formControlName="last_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Mobile</ion-label>
+                <ion-input type="number" formControlName="mobile"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <br>
+            <div padding>
+                <button ion-button primary block round (click)="createAccount()" [disabled]="!signupForm.valid">Sign Up</button>
+            </div>
+        </form>
+    </ion-list>
+</ion-content>
